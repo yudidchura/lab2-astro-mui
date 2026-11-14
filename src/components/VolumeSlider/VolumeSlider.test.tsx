@@ -27,4 +27,10 @@ describe('VolumeSlider Component', () => {
     render(<VolumeSlider label="Volumen" />);
     expect(screen.getByText('Volumen')).toBeInTheDocument();
   });
+
+  it('debe iniciar el slider con el valor 80', () => {
+    render(<VolumeSlider label="Brillo" defaultValue={80} />);
+    const slider = screen.getByRole('slider');
+    expect(slider).toHaveAttribute('aria-valuenow', '80');
+  });
 });
