@@ -8,6 +8,7 @@ export interface VolumeSliderProps {
   defaultValue?: number;
   min?: number;
   max?: number;
+  color?: 'primary' | 'secondary' | 'success';
   onChange?: (value: number) => void;
 }
 
@@ -16,6 +17,7 @@ export default function VolumeSlider({
   defaultValue = 0,
   min = 0,
   max = 100,
+  color = 'primary',
   onChange,
 }: VolumeSliderProps) {
   const [value, setValue] = useState(defaultValue);
@@ -39,7 +41,7 @@ export default function VolumeSlider({
         max={max}
         aria-labelledby={labelId}
         data-testid="volume-slider"
-        color="primary"
+        color={color}
       />
     </Box>
   );
